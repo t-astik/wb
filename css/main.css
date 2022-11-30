@@ -27,17 +27,320 @@
     margin-right: 40px;
 }
 
-.body {}
-
 .bg {
     background-color: #6725A8;
 }
 
 .content {
     display: flex;
+    justify-content: space-between;
+    padding: 20px 24px 50px 24px;
     border-radius: 20px;
-    background-color: #FFFFFF;
+    background-color:rgba(246, 246, 250, 1);
 }
+
+.basket {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+.productsInBasket {
+    margin-bottom: 40px;
+}
+
+.productsSectionTitle {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 36px;
+    margin-bottom: 27px;
+}
+
+.selectAll {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.selectAll > div {
+    display: flex;
+    align-items: center;
+}
+
+.selectAllInput {
+    margin-right: 22px;
+    width: 22px;
+    height: 22px;
+    accent-color: rgba(203, 17, 171, 1);
+}
+
+.product {
+    display: flex;
+    padding-top: 12px;
+    margin-bottom: 20px;
+}
+
+.leftPart {
+    display: flex;
+    margin-right: 12px;
+}
+
+.leftPart > input {
+    margin-right: 12px;
+    accent-color: rgba(203, 17, 171, 1);
+    width: 22px;
+}
+
+.productMeta {
+    display: flex;
+}
+
+.productMeta > img {
+    margin-right: 16px;
+    width: 72px;
+    height: 96px;
+}
+
+.productNameSection {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    min-width: 280px;
+    margin-right: 20px;
+}
+
+.productName {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 8px;
+}
+
+.productChar {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    margin-bottom: 8px;
+}
+
+.rightPart {
+    display: flex;
+    justify-content: space-between;
+    min-width: 270px;
+}
+
+.newPrice {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.oldPrice {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    color: rgba(160, 160, 164, 1);
+    margin-left: auto;
+    border-bottom: 1px dashed rgba(151, 151, 175, 1);
+    width: fit-content;
+    text-decoration: line-through;
+}
+
+.fabrik,
+.stock {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    color: #A0A0A4;
+}
+
+.counter {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 12px;
+    align-items: center;
+    width: 100px;
+    height: 44px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    margin-right: 30px;
+}
+
+.counter > div {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.productsOutStock {
+    color: rgba(151, 151, 175, 1);
+}
+
+.productsOutStockTitle {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.shippingMethods,
+.paymentMethods,
+.recipient {
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+    border-radius: 16px;
+    padding: 16px 24px 24px 24px;
+    margin-bottom: 16px;
+}
+
+.shippingMethodsTitle,
+.paymentMethodsTitle {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.shippingMethodsTitle > p,
+.paymentMethodsTitle > p,
+.recipient > p {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+}
+
+.shippingMethodsTitle > div,
+.paymentMethodsTitle > div {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #CB11AB;
+}
+
+.street {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.workingTime {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.IssuePont,
+.deliveryPrice {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 16px;
+}
+
+.free {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.arrivalDates {
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 8px;
+}
+
+.arrivalDate {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.shippedGoods > img {
+    width: 40px;
+    height: 56px;
+}
+
+.returnShipping {
+    display: flex;
+    align-items: center;
+}
+
+.returnShipping  > img {
+    margin-right: 12px;
+}
+
+.paymentSystemMain > div {
+    display: flex;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 8px;
+}
+
+.paymentSystemMain > div > img {
+    margin-right: 8px;
+}
+
+.paymentSystemMain > p {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    color: #A0A0A4;
+}
+
+.recipientForm {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #A0A0A4;
+}
+
+.recipient > p {
+    margin-bottom: 20px;
+}
+
+.topForms {
+    margin-bottom: 10px;
+}
+
+.recipientName,
+.recipientSurname {
+    width: 49%;
+}
+
+.recipientMail,
+.recipientPhone,
+.recipientINN {
+    width: 33%;
+}
+
+.bottomForms {
+    display: flex;
+    align-items: flex-start;
+}
+
+.bottomForms > div {
+    font-size: 12px;
+    line-height: 14px;
+    color: #000000;
+}
+
+.recipientINN > input {
+    width: 100%;
+}
+
+
+
+/* Total Card */
 
 .totalCard {
     display: flex;
@@ -137,6 +440,13 @@ div > .price {
     margin-right: 8px;
 }
 
+.paymentSystem > span {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    color: #A0A0A4;
+}
+
 .prepayment {
     font-weight: 400;
     font-size: 13px;
@@ -155,6 +465,8 @@ div > .price {
 .checkboxBlock > input {
     margin-right: 8px;
     accent-color:  rgba(203, 17, 171, 1);
+    width: 22px;
+    height: 22px;
 }
 
 .prepayment > p {
