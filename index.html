@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WB</title>
-    <link rel="stylesheet" href="css/modal.css">
     <link rel="stylesheet" href="./css/reset.css"> 
     <link rel="stylesheet" href="./css/base.css"> 
     <link rel="stylesheet" href="./css/main.css"> 
+    <link rel="stylesheet" href="css/modal.css">
     <link rel="stylessheet" href="./css/fonts/SegoeUI/stylesheet.css">
     
 </head>
@@ -38,10 +38,115 @@
 
                         <div class="productsOutStockRoot" id="productsOutStockRoot"></div>
 
+
+                        <div class="_modal" data-modal="modal-1">
+                            <div class="modal-bg">
+                                <div class="modal-body">
+                                    <div class="modal-close"><img src="img/close.svg" alt=""></div>
+                                    <div class="modal-content modal-callback">
+                                        <div class="modal-callback__title" id="delivery">Способ доставки</div>
+                                        <div class="modal-callback__text">
+                                            <div class="deliveryModal-btns">
+                                                <div>В пункт выдачи</div>
+                                                <div>Курьером</div>
+                                            </div>
+                                            <div class="deliveryModal-body">
+                                                <p>Мои адреса</p>
+                                                <div class="addressItem">
+                                                    <div class="addressItem-left">
+                                                        <input type="radio" id="Табышалиева" name="fav_language" value="Табышалиева">
+                                                        <label for="html">Бишкек, улица Табышалиева, 57</label><br>
+                                                    </div>
+                                                    <img src="./img/trash.svg" alt="trash.svg">
+                                                </div>
+                                                <div class="addressItem">
+                                                    <div class="addressItem-left">
+                                                        <input type="radio" id="Жукеева-Пудовкина" name="fav_language" value="Жукеева-Пудовкина">
+                                                        <label for="html">Бишкек, улица Жукеева-Пудовкина, 77/1</label><br>
+                                                    </div>
+                                                    <img src="./img/trash.svg" alt="trash.svg">
+                                                </div>
+                                                <div class="addressItem">
+                                                    <div class="addressItem-left">
+                                                        <input type="radio" id="Ахунбаева" name="fav_language" value="Ахунбаева">
+                                                        <label for="html">Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1</label><br>
+                                                    </div>
+                                                    <img src="./img/trash.svg" alt="trash.svg">
+                                                </div>
+                                            </div>
+                                            <div class="deliveryModal-footer">
+                                                <button>
+                                                    Выбрать
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="_modal" data-modal="modal-2">
+                            <div class="modal-bg">
+                                <div class="modal-body">
+                                    <div class="modal-close"><img src="img/close.svg" alt=""></div>
+                                    <div class="modal-content modal-callback">
+                                        <div class="modal-callback__title" id="pay">Способ оплаты</div>
+                                        <div class="modal-callback__text">
+                                            <div class="paymentModal-body">
+                                                <div class="cardItem">
+                                                    <div class="cardItem-left">
+                                                        <input type="radio" id="Табышалиева" name="fav_language" value="Табышалиева">
+                                                        <label for="html">
+                                                            <img src="./img/mir.svg" alt="visa" style="margin-right: 5px; margin-bottom: -7px;">
+                                                            1234 56•• •••• 1234
+                                                        </label><br>
+                                                    </div>
+                                                </div>
+                                                <div class="cardItem">
+                                                    <div class="cardItem-left">
+                                                        <input type="radio" id="Жукеева-Пудовкина" name="fav_language" value="Жукеева-Пудовкина">
+                                                        <label for="html">
+                                                            <img src="./img/visa.svg" alt="visa" style="margin-right: 5px; margin-bottom: -7px;">
+                                                            1234 56•• •••• 1234
+                                                        </label><br>
+                                                    </div>
+                                                </div>
+                                                <div class="cardItem">
+                                                    <div class="cardItem-left">
+                                                        <input type="radio" id="Ахунбаева" name="fav_language" value="Ахунбаева">
+                                                        <label for="html">
+                                                            <img src="./img/masterCard.svg" alt="visa" style="margin-right: 5px; margin-bottom: -7px;">
+                                                            1234 56•• •••• 1234
+                                                        </label><br>
+                                                    </div>
+                                                </div>
+                                                <div class="cardItem">
+                                                    <div class="cardItem-left">
+                                                        <input type="radio" id="Ахунбаева" name="fav_language" value="Ахунбаева">
+                                                        <label for="html">
+                                                            <img src="./img/maestro.svg" alt="visa" style="margin-right: 5px; margin-bottom: -7px;">
+                                                            1234 56•• •••• 1234
+                                                        </label><br>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="paymentModal-footer">
+                                                <button>
+                                                    Выбрать
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="shippingMethods">
                             <div class="shippingMethodsTitle">
                                 <p>Способы доставки</p>
-                                <div>Изменить</div>
+                                <div class="modal__btn _modal-open" data-modal-open="modal-1">
+                                    Изменить
+                                </div>
                             </div>
                             <div class="shippingMethodsData">
                                 <div class="IssuePont">
@@ -84,7 +189,9 @@
                         <div class="paymentMethods">
                             <div class="paymentMethodsTitle">
                                 <p>Способ оплаты</p>
-                                <div>Изменить</div>
+                                <div class="modal__btn _modal-open" data-modal-open="modal-2">
+                                    Изменить
+                                </div>
                             </div>
                             <div class="paymentSystemMain">
                                 <div><img src="./img/mir.svg" alt="mir">1234 12•• •••• 1234&nbsp;&nbsp;01/30</div>
@@ -115,17 +222,12 @@
             </div>
             </div>
         </div>
-        <div id='modalWindow'>
-            содержимое окна
-        </div>
-        <div id='bgOverlay'></div>
         <div class="footer">
             <p>© 2022  ООО «Товары и точка»</p>
         </div>
     </div>
  
-<script src="base.js"></script>
-<script src="plugins/modal.js"></script>
+<script src="modal.js"></script>
 <script src="index.js"></script>    
 </body>
 </html>

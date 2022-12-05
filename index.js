@@ -1,3 +1,4 @@
+
 const startApp = () => {
     let globalState = {
         basketProducts: [
@@ -78,7 +79,7 @@ const startApp = () => {
                         </div>
                         <div class="productPriceSection">
                             <p class="newPrice">${(this.state.price * this.state.count).toLocaleString()} coм</p>
-                            <p class="oldPrice">${(this.state.price * this.state.count + 500).toLocaleString()} сом</p>
+                            <p class="oldPrice">${(this.state.oldPrice * this.state.count).toLocaleString()} сом</p>
                         </div>
                     </div>
                 </div>
@@ -171,7 +172,7 @@ const startApp = () => {
                     <div class="deliverySection">
                         <div class="deliveryTitle">
                             <p>Доставка в пункт выдачи</p>
-                            <img src="./img/pen.svg" alt="pen"/>
+                            <img src="./img/pen.svg" alt="pen" class="modal__btn _modal-open" data-modal-open="modal-1"/>
                         </div>
                         <p class="address">
                             Бишкек, улица Ахматбека Суюмбаева,<br/>
@@ -191,7 +192,7 @@ const startApp = () => {
                     <div class="paymentSection">
                         <div class="paymentTitle">
                             <p>Оплата картой</p>
-                            <img src="./img/pen.svg" alt="pen"/>
+                            <img src="./img/pen.svg" alt="pen" class="modal__btn _modal-open" data-modal-open="modal-2"/>
                         </div>
                         <div class="paymentSystem">
                             <img src="./img/mir.svg" alt="mir">
@@ -489,13 +490,13 @@ const startApp = () => {
 
     const getBasketOldTotalPrice = () => {
         return globalState.basketProducts.reduce((total, product) => {
-            return total + (product.count * (product.price + 522))
+            return total + (product.count * product.oldPrice)
         }, 0)
     }
 
     const getBasketSale = () => {
         return globalState.basketProducts.reduce((total, product) => {
-            return total + (product.count * 522)
+            return total + (product.count * product.oldPrice - product.count * product.price)
         }, 0)
     }
 
@@ -547,6 +548,7 @@ const startApp = () => {
                 productCardComponent.setAttribute('name', product.name)
                 productCardComponent.setAttribute('count', product.count)
                 productCardComponent.setAttribute('price', product.price)
+                productCardComponent.setAttribute('oldPrice', product.oldPrice)
                 productCardComponent.setAttribute('color', product.color)
                 productCardComponent.setAttribute('size', product.size)
                 productCardComponent.setAttribute('img', product.img)
@@ -556,6 +558,7 @@ const startApp = () => {
                 productCardComponent.setAttribute('name', product.name)
                 productCardComponent.setAttribute('count', product.count)
                 productCardComponent.setAttribute('price', product.price)
+                productCardComponent.setAttribute('oldPrice', product.oldPrice)
                 productCardComponent.setAttribute('color', product.color)
                 productCardComponent.setAttribute('size', product.size)
                 productCardComponent.setAttribute('img', product.img)
@@ -621,7 +624,49 @@ const startApp = () => {
         renderTotalCard()
     }
     
-    render()    
+    render()
+
+    const modalBtns = document.querySelectorAll('._modal-open');
+    const modals = document.querySelectorAll('._modal');
+
+    const body = document.body;
+
+    function openModal(elem) {
+        elem.classList.add('_active');
+        body.classList.add('_locked')
+    }
+
+    function closeModal(e) {
+        if (e.target.classList.contains('modal-close') || e.target.closest('.modal-close') || e.target.classList.contains('modal-bg')) {
+            e.target.closest('._modal').classList.remove('_active');
+            body.classList.remove('_locked')
+        }
+    }
+
+    modalBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            let data = e.target.dataset.modalOpen;
+
+            modals.forEach(modal => {
+                if (modal.dataset.modal == data || modal.dataset.modal == e.target.closest('._modal-open').dataset.modalOpen) {
+                    openModal(modal)
+                }
+            })
+        })
+    })
+
+    modals.forEach(modal => {
+        modal.addEventListener('click', e => closeModal(e))
+    })
+
+    window.addEventListener('keydown', e => {
+        modals.forEach(modal => {
+            if (e.key === "Escape" && modal.classList.contains('_active')) {
+                modal.classList.remove('_active');
+                body.classList.remove('_locked');
+            }
+        })
+    })
 }
 
 startApp()
