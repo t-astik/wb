@@ -903,6 +903,9 @@ div > .price {
     .modal-content {
         height: 100%;
     }
+    .modal-callback__title {
+        width: 100% !important;
+    }
     #pay {
         width: 100% !important;
     }
