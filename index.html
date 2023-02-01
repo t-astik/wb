@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="./css/main.css"> 
     <link rel="stylesheet" href="css/modal.css">
     <link rel="stylessheet" href="./css/fonts/SegoeUI/stylesheet.css">
-    
 </head>
 <body>
     <div class="app">
@@ -30,14 +29,24 @@
             </div>
         </div>
 
+        <div class="mobHeader">
+            <div class="burgerSectionMob">
+                <img src="./img/mobBurger.svg" alt="burger"/>
+            </div>
+            <div class="titleSectionMob">
+                товары и точка
+            </div>
+            <div class="searchSectionMob">
+                <img src="./img/mobSearch.svg" alt="burger"/>
+            </div>
+        </div>
+
         <div class="body">
             <div class="bg">
                 <div class="content">
                     <div class="basket">
                         <div class="productsInBasketRoot" id="productsInBasketRoot"></div>
-
                         <div class="productsOutStockRoot" id="productsOutStockRoot"></div>
-
 
                         <div class="_modal" data-modal="modal-1">
                             <div class="modal-bg">
@@ -45,33 +54,35 @@
                                     <div class="modal-close"><img src="img/close.svg" alt=""></div>
                                     <div class="modal-content modal-callback">
                                         <div class="modal-callback__title" id="delivery">Способ доставки</div>
-                                        <div class="modal-callback__text">
-                                            <div class="deliveryModal-btns">
-                                                <div>В пункт выдачи</div>
-                                                <div>Курьером</div>
-                                            </div>
-                                            <div class="deliveryModal-body">
-                                                <p>Мои адреса</p>
-                                                <div class="addressItem">
-                                                    <div class="addressItem-left">
-                                                        <input type="radio" id="Табышалиева" name="fav_language" value="Табышалиева">
-                                                        <label for="html">Бишкек, улица Табышалиева, 57</label><br>
-                                                    </div>
-                                                    <img src="./img/trash.svg" alt="trash.svg">
+                                        <div class="modal-callback__text modal-callback__text1">
+                                            <div>
+                                                <div class="deliveryModal-btns">
+                                                    <div>В пункт выдачи</div>
+                                                    <div>Курьером</div>
                                                 </div>
-                                                <div class="addressItem">
-                                                    <div class="addressItem-left">
-                                                        <input type="radio" id="Жукеева-Пудовкина" name="fav_language" value="Жукеева-Пудовкина">
-                                                        <label for="html">Бишкек, улица Жукеева-Пудовкина, 77/1</label><br>
+                                                <div class="deliveryModal-body">
+                                                    <p>Мои адреса</p>
+                                                    <div class="addressItem">
+                                                        <div class="addressItem-left">
+                                                            <input type="radio" id="Табышалиева" name="fav_language" value="Табышалиева">
+                                                            <label for="html">Бишкек, улица Табышалиева, 57</label><br>
+                                                        </div>
+                                                        <img src="./img/trash.svg" alt="trash.svg">
                                                     </div>
-                                                    <img src="./img/trash.svg" alt="trash.svg">
-                                                </div>
-                                                <div class="addressItem">
-                                                    <div class="addressItem-left">
-                                                        <input type="radio" id="Ахунбаева" name="fav_language" value="Ахунбаева">
-                                                        <label for="html">Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1</label><br>
+                                                    <div class="addressItem">
+                                                        <div class="addressItem-left">
+                                                            <input type="radio" id="Жукеева-Пудовкина" name="fav_language" value="Жукеева-Пудовкина">
+                                                            <label for="html">Бишкек, улица Жукеева-Пудовкина, 77/1</label><br>
+                                                        </div>
+                                                        <img src="./img/trash.svg" alt="trash.svg">
                                                     </div>
-                                                    <img src="./img/trash.svg" alt="trash.svg">
+                                                    <div class="addressItem">
+                                                        <div class="addressItem-left">
+                                                            <input type="radio" id="Ахунбаева" name="fav_language" value="Ахунбаева">
+                                                            <label for="html">Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1</label><br>
+                                                        </div>
+                                                        <img src="./img/trash.svg" alt="trash.svg">
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="deliveryModal-footer">
@@ -201,19 +212,38 @@
 
                         <div class="recipient">
                             <p>Получатель</p>
-                            <form class="recipientForm">
+                            <form class="recipientForm" id="recipientFormId">
                                 <div class="topForms">
-                                    <input class="recipientName" type="text" placeholder="Имя">
-                                    <input class="recipientSurname" type="text" placeholder="Фамилия">
+                                    <div class="form-item">
+                                        <input type="text" class="form-input" required>
+                                        <label class="form-label">Имя</label>
+                                    </div>
+
+                                    <div class="form-item">
+                                        <input type="text" class="form-input" required>
+                                        <label class="form-label">Фамилия</label>
+                                    </div>
+
                                 </div>
                                 <div class="bottomForms">
-                                    <input class="recipientMail" type="text" placeholder="Почта">
-                                    <input class="recipientPhone" type="text" placeholder="Телефон">
-                                    <div class="recipientINN">
-                                        <input type="text" placeholder="ИНН">
-                                        <p>Для таможенного оформления</p>
+                                    <div class="form-item">
+                                        <input type="text" class="form-input" required>
+                                        <label class="form-label">Почта</label>
+                                    </div>
+
+                                    <div class="form-item">
+                                        <input type="text" class="form-input" required>
+                                        <label class="form-label">Телефон</label>
+                                    </div>
+
+                                    <div class="form-item">
+                                        <input type="text" class="form-input" required>
+                                        <label class="form-label">ИНН</label>
+                                        <p class="polic">Для таможенного оформления</p>
                                     </div>
                                 </div>
+
+                                
                             </form>
                         </div>
                     </div>
@@ -222,8 +252,20 @@
             </div>
             </div>
         </div>
+
         <div class="footer">
             <p>© 2022  ООО «Товары и точка»</p>
+        </div>
+
+        <div class="mobFooter">
+            <div class="mobFooterText">© 2022  ООО «Товары и точка»</div>
+            <div class="footerBtns">
+                <img src="./img/home.svg" alt="home">
+                <img src="./img/mobFooterSearch.svg" alt="mobFooterSearch">
+                <img src="./img/mobFooterCart.svg" alt="mobFooterCart">
+                <img src="./img/mobFooterFavorites.svg" alt="mobFooterFavorites">
+                <img src="./img/mobFooterProfile.svg" alt="mobFooterProfile">
+            </div>
         </div>
     </div>
  
